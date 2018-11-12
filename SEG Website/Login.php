@@ -1,3 +1,3 @@
-<? php require("navigation.php")?>
+<?php require("navigation.php")?>
 </body>
 </html>

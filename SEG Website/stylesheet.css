@@ -108,7 +108,7 @@ body, html {
 {
 		/*text-shadow: 2px 2px 8px rgba(3, 3, 3,0.5);*/
 		line-height: 0.2;
-		font-family: Trebuchet MS;
+		font-family: "Trebuchet MS";
 		font-weight: 900;
 		font-size: 60;
 		color: rgb(52,52,53);
@@ -118,7 +118,7 @@ body, html {
 		padding-top: 8%;
 		text-shadow: 2px 2px 8px rgba(3, 3, 3,0.5);
 		line-height: 1;
-		font-family: Trebuchet MS;
+		font-family: "Trebuchet MS";
 		font-weight: 100;
 		max-width: 60%;
 		margin: 0 auto;
@@ -155,7 +155,7 @@ body, html {
 	float:left;
 }
 .btn{
-	font-family: Arial;
+	font-family: "Arial";
 	font-size: 50%;
 	font-weight: 600;
 	color: #fefbf0;
@@ -229,7 +229,7 @@ max-width: 30%;
 text-align: right;
 padding-top: 0%;
 color: #fefbf0;
-font-family: Arial;
+font-family: "Arial";
 font-size: 115%;
 font-weight:200;
 line-height: 140%;

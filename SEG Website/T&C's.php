@@ -1,4 +1,4 @@
-<? php require("navigation.php")?>
+<?php require("navigation.php")?>
 <div class = "banner">
     <div class = "bannerinner">
       <div class = "bannercontent">
@@ -17,7 +17,5 @@
 	<li>Members who violate the above rules and who repeatedly do not return games on time (on three occasions in a 12 month period) will be banned from renting games for 6 months.</li>
 	<li>Members are expected to take good care of the games they are renting. If a game is returned damaged (e.g. a CD/DVD is scratched and no longer readable), the member is expected to refund the value of the game to the society and will not be allowed to rent games until they do so.</li>
 </ol>
-
-</html>
-
 </body>
+</html>

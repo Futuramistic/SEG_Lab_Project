@@ -16,7 +16,7 @@
 				<div class = "innersection">
 					<strong>What we do</strong><p>
 						The Computer Gaming Society has a collection of	computer games for a range of platforms, including current and older gaming consoles. Members
-						of our society may rent these games for a limited time. Please view our <a href="#societyrules"  style="color: rgb(207,173,171)">society rules</a>
+						of our society may rent these games for a limited time. Please view our <a href="T&C's.php"  style="color: rgb(207,173,171)">society rules</a>
 						for more information on renting games.
 				</div>
 			</div>
