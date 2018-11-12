@@ -71,7 +71,7 @@ body, html {
 	height: 100%;
 	width: 100%;
 	background-color:rgb(52,52,53);
-	background-image: url("bannerimg2.jpg");
+	background-image: url("bannerImg2.jpg");
 	background-size: cover;
 	background-position: center;
 	display: table;
@@ -82,7 +82,7 @@ body, html {
 	height: 10%;
 	width: 100%;
 	background-color:rgb(52,52,53);
-	background-image: url("bannerimg3.jpg");
+	background-image: url("bannerImg3.jpg");
 	background-size: cover;
 	background-position: center;
 	display: table;
