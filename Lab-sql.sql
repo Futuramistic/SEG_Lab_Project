@@ -1,14 +1,25 @@
+
+CREATE DATABASE game_society;
+
+USE game_society;
+
+GRANT ALL PRIVILEGES ON game_society.*
+TO 'admin'@'localhost'
+IDENTIFIED BY 'admin';
+
 CREATE TABLE Game (
-  id     VARCHAR(50) UNIQUE NOT NULL,
-  name        VARCHAR(50)        NOT NULL,
-  platform     VARCHAR(50)        NOT NULL,
-  format         VARCHAR(50)       NOT NULL,
-  developer       VARCHAR(20)        NOT NULL,
-  PEGI            INT                 NOT NULL,
-  price            FLOAT(10, 2)      NOT NULL,
-  year              Date           NOT NULL,
+  id     	INT(50)		NOT NULL AUTO_INCREMENT,
+  name       	VARCHAR(50)	NOT NULL,
+  platform     	VARCHAR(50)	NOT NULL,
+  format        VARCHAR(50)	NOT NULL,
+  developer     VARCHAR(20)	NOT NULL,
+  PEGI          INT        	NOT NULL,
+  price         FLOAT(10, 2)	NOT NULL,
+  year          Date        	NOT NULL,
+  rented 	SMALLINT(1) 	NOT NULL,
   PRIMARY KEY (id)
 );
+
 CREATE TABLE User (
   userID VARCHAR(50) UNIQUE NOT NULL,
   firstName   VARCHAR(50)        NOT NULL,
@@ -18,6 +29,7 @@ CREATE TABLE User (
   user_name    VARCHAR(50)        NOT NULL,
   PRIMARY KEY (userID)
 );
+
 CREATE TABLE Renting (
   rentDate        DATETIME        NOT NULL,
   dueDate         DATETIME        NOT NULL,
