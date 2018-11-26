@@ -1,6 +1,19 @@
-<?php require("navigation.php")?>
 
-  <head>
+<?php
+require("database.php"); ?>
+<html>
+<head>
+<title>The Computer Gaming Society</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+
+<body>
+<div class = "banner">
+<?php
+require("navigation.php");
+  ?>
+
 <style>
 #loginMain{
 	width:550px;
@@ -30,9 +43,15 @@ height 35px;
 
 		<table>
 
+<<<<<<< HEAD
 		<form action="awadyhelp.html">
 		<tr>
 
+=======
+		
+		<tr> 
+		
+>>>>>>> 275edd1b28f0a4eceaf7d04f6d7ed1b085ad00e1
 		<td><input type="text" placeholder="First Name" name="firstname"> </td> </tr>
 		<td><input type="text" placeholder="Last Name" name="lastname"> </td> </tr>
 		<td><input type="text" placeholder="User Name" name="username"> </td> </tr>
@@ -43,8 +62,11 @@ height 35px;
 
 		</table>
 
+<<<<<<< HEAD
 </form>
+=======
+</form> 
+   <?php
+require("footer.php"); ?>
+>>>>>>> 275edd1b28f0a4eceaf7d04f6d7ed1b085ad00e1
 
-</body>
-
-</html>

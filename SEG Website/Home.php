@@ -1,8 +1,18 @@
+<<<<<<< HEAD
 <?php
 $title ="Home Page";
 require("database.php");
 require("navigation.php");?>
+=======
+<html>
+<head>
+<title>The Computer Gaming Society</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+>>>>>>> 275edd1b28f0a4eceaf7d04f6d7ed1b085ad00e1
 <div class = "banner">
+<?php require("navigation.php")?>
 <div class = "bannerinner">
       <div class = "bannercontent">
       <h2>Looking for a game?</h2>
@@ -19,7 +29,7 @@ require("navigation.php");?>
 				<div class = "innersection">
 					<strong>What we do</strong><p>
 						The Computer Gaming Society has a collection of	computer games for a range of platforms, including current and older gaming consoles. Members
-						of our society may rent these games for a limited time. Please view our <a href="T&C's.php"  style="color: rgb(207,173,171)">society rules</a>
+						of our society may rent these games for a limited time. Please view our <a href="Rules.php"  style="color: rgb(207,173,171)">society rules</a>
 						for more information on renting games.
 				</div>
 			</div>
