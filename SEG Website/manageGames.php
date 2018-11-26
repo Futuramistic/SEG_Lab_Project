@@ -94,4 +94,3 @@ require("navigation.php");
     </table>
 
 <?php require("footer.php") ?>
-

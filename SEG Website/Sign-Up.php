@@ -1,3 +1,4 @@
+
 <?php
 require("database.php"); ?>
 <html>
@@ -56,6 +57,6 @@ height 35px;
 		</table>
 
 </form> 
-
    <?php
 require("footer.php"); ?>
+

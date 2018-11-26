@@ -99,7 +99,5 @@ require("navigation.php");
         else {}
       }
       ?>
-<?>
-
 <?php
 require("footer.php"); ?>

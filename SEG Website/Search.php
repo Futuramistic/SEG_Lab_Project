@@ -61,7 +61,6 @@ require("navigation.php");
     text-decoration: none;
   }
 </style>
-
 <div style="text-align:center; ">
 <form action="Search.php" method="get">
 <table class="center" style="text-align: auto;">
