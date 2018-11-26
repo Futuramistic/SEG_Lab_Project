@@ -1,6 +1,19 @@
-<?php require("navigation.php")?>
 
-  <head>
+<?php
+require("database.php"); ?>
+<html>
+<head>
+<title>The Computer Gaming Society</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+
+<body>
+<div class = "banner">
+<?php
+require("navigation.php");
+  ?>
+
 <style>
 #loginMain{
 	width:550px;
@@ -44,7 +57,6 @@ height 35px;
 		</table>
 
 </form> 
+   <?php
+require("footer.php"); ?>
 
-</body>
-
-</html>

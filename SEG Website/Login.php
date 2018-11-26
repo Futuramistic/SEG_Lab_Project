@@ -1,5 +1,15 @@
 <?php
-require("database.php");
+require("database.php"); ?>
+<html>
+<head>
+<title>The Computer Gaming Society</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+
+<body>
+<div class = "banner">
+<?php
 require("navigation.php");
   ?>
 <style>

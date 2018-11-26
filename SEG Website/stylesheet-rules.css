@@ -75,7 +75,7 @@ body, html {
 	background-position: center;
 	display: table;
 	top: 0;
-	box-shadow: 0 4px 8px 0 rgba(3, 3, 3,0.2), 0 6px 20px 0 rgba(3, 3, 3,0.2);#
+	box-shadow: 0 4px 8px 0 rgba(3, 3, 3,0.2), 0 6px 20px 0 rgba(3, 3, 3,0.2);
 	color: rgb(52,52,52);
 }
 
@@ -86,14 +86,14 @@ body, html {
 	color: rgb(52,52,52);
 	margin: 0 auto;
 	margin-top: 7%;
-	border-radius: 10px 10px 0 0px;
+	border-radius: 10px 10px 0 0;
 	margin-bottom: 5%;
 	box-shadow: 0 4px 8px 0 rgba(3, 3, 3,0.3), 0 6px 20px 0 rgba(3, 3, 3,0.3);
 }
 
 .page > .pagecontent{
 	margin-left: 10%;
-	padding-top: 5%;
+	padding-top: 80px;
 	margin-right: 10%;
 }
 .banner2{
@@ -108,7 +108,6 @@ body, html {
 	box-shadow: 20px 20px 20px 16px #111111;
 }
 .banner>.bannerinner{
-	diplay: table-cell;
 	vertical-align: middle;
 	width: 100%;
 	max-width: none;

@@ -1,7 +1,17 @@
 <?php
-require("database.php");
+require("database.php"); ?>
+<html>
+<head>
+<title>The Computer Gaming Society</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+
+<body>
+<div class = "banner">
+<?php
 require("navigation.php");
-?>
+  ?>
       <style>
         input.searchForm{
         }
@@ -85,3 +95,5 @@ require("navigation.php");
       <tr><th></th><td><button type="submit" name="id" value="<?php echo($gameID['id']);?>">Submit</button></td></tr>
       </table>
       </form>
+     <?php
+require("footer.php"); ?>
