@@ -61,7 +61,7 @@ height 35px;
 <div id="loginMain">
 			<table align="center"><tr><td><h1 align="center"> Login </h1><td>
 		
-			<td><h1 align="center"> <a href="sign-Up.php" id="register">Register</a> </h1></td> </tr>
+			<td><h1 align="center"> <a href="Sign-Up.php" id="register">Register</a> </h1></td> </tr>
 		
 
 		
