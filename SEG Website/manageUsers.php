@@ -49,35 +49,37 @@ require("navigation.php");
 
 
     <table class="center output" style="text-align: center;">
-    <tr><th><a class="action" href="createGame.php">Create New Game</a></th></tr>
+    <tr><th><a class="action" href="createUser.php">Create New User</a></th></tr>
     <tr>
     <th>ID        </th>
-    <th>Name      </th>
-    <th>Platform  </th>
-    <th>Format    </th>
-    <th>Developer </th>
-    <th>Year      </th>
-    <th>Price     </th>
-    <th>Age       </th>
-    <th>Rented    </th>
+    <th>First Name      </th>
+    <th>Last Name  </th>
+    <th>Password Hash    </th>
+    <th>E-mail </th>
+    <th>User Name      </th>
+    <th>Fees      </th>
+    <th>Admin    </th>
+    <th>Administration     </th>
+    <th>Banned      </th>
     <tr>
-    <?php  $result = find_all_games();
-    while($game = mysqli_fetch_assoc($result))
+    <?php  $result = find_all_users();
+    while($user = mysqli_fetch_assoc($result))
     {
       echo("<tr>");
-      echo("<td>{$game['id']}</td>");
-      echo("<td>{$game['name']}</td>");
-      echo("<td>{$game['platform']}</td>");
-      echo("<td>{$game['format']}</td>");
-      echo("<td>{$game['developer']}</td>");
-      echo("<td>{$game['year']}</td>");
-      echo("<td>{$game['price']}</td>");
-      echo("<td>{$game['PEGI']}</td>");
-      if($game['rented']==1){echo("<td>True</td>");} else{echo("<td>False</td>");}
+      echo("<td>{$user['userID']}</td>");
+      echo("<td>{$user['firstName']}</td>");
+      echo("<td>{$user['secondName']}</td>");
+      echo("<td>{$user['password']}</td>");
+      echo("<td>{$user['email']}</td>");
+      echo("<td>{$user['user_name']}</td>");
+      echo("<td>{$user['fees']}</td>");
+      if($user['admin']==1){echo("<td>True</td>");}else{echo("<td>False</td>");}
+      if($user['administration']==1){echo("<td>True</td>");}else{echo("<td>False</td>");}
+      if($user['banned']==1){echo("<td>True</td>");}else{echo("<td>False</td>");}
       ?>
-        <td><a class="action" href= "<?php echo('editGame.php?id='. $game['id'] ); ?>">Edit</a></td>
-        <td><a class="action" href= "<?php echo('deleteGame.php?id='. $game['id'] ); ?>">Delete</a></td>
-      <tr>
+      <td><a class="action" href= "<?php echo('editUser.php?userID='. $user['userID'] ); ?>">Edit</a></td>
+      <td><a class="action" href= "<?php echo('deleteUser.php?userID='. $user['userID'] ); ?>">Delete</a></td>
+    </tr>
     <?php
     }
     ?>
