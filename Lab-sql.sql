@@ -26,19 +26,18 @@ CREATE TABLE User (
   secondName VARCHAR(50)        NOT NULL,
   password   VARCHAR(50)        NOT NULL,
   email      VARCHAR(50)        NOT NULL,
-  user_name  VARCHAR(50)        NOT NULL,
   admin      SMALLINT(1)        NOT NULL,
   banned     SMALLINT(1)        NOT NULL,
   PRIMARY KEY (userID)
 );
 
 CREATE TABLE Renting (
-  id       VARCHAR(50) UNIQUE NOT NULL,
+  id       INT(50) UNIQUE NOT NULL AUTO_INCREMENT,
   rentDate DATETIME           NOT NULL,
   dueDate  DATETIME           NOT NULL,
-  duration DATETIME           NOT NULL,
-  userid   VARCHAR(50),
+  userid   INT(50),
   gameid   VARCHAR(50),
+  returnedYet SAMLLINT(1)     NOT NULL,
   FOREIGN KEY (gameid) REFERENCES Game (id),
   FOREIGN KEY (userid) REFERENCES User (userID),
   PRIMARY KEY (id)
