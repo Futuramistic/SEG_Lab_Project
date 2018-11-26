@@ -15,7 +15,7 @@ width: 120px;
 margin-top:25px;
 height 35px;
 }
-
+#login{ text-decoration: none; color:black; }
 </style>
 
 </head>
@@ -23,7 +23,10 @@ height 35px;
 
 <body>
 <div id="loginMain">
-		<h1 align="center"> Login here </h1>
+		<table align="center"><tr><td><h1 align="center"> Register </h1><td>
+		
+		<td><h1 align="center"> <a href="Login.php" id="login">Login</a> </h1></td> </tr>
+		
 
 		<table>
 
