@@ -42,6 +42,11 @@ require("navigation.php");
           padding-right: 10px;
 
         }
+        image.output
+        {
+          height:20px;
+          width: 50px;
+        }
         a {
           text-decoration: none;
         }
@@ -52,6 +57,7 @@ require("navigation.php");
     <tr><th><a class="action" href="createGame.php">Create New Game</a></th></tr>
     <tr>
     <th>ID        </th>
+    <th>Image     </th>
     <th>Name      </th>
     <th>Platform  </th>
     <th>Format    </th>
@@ -59,6 +65,7 @@ require("navigation.php");
     <th>Year      </th>
     <th>Price     </th>
     <th>Age       </th>
+    <th>Review    </th>
     <th>Rented    </th>
     <tr>
     <?php  $result = find_all_games();
@@ -66,6 +73,7 @@ require("navigation.php");
     {
       echo("<tr>");
       echo("<td>{$game['id']}</td>");
+      echo("<td><image style='height: 100px;' src='".$game['image']."'/></td>");
       echo("<td>{$game['name']}</td>");
       echo("<td>{$game['platform']}</td>");
       echo("<td>{$game['format']}</td>");
@@ -73,6 +81,9 @@ require("navigation.php");
       echo("<td>{$game['year']}</td>");
       echo("<td>{$game['price']}</td>");
       echo("<td>{$game['PEGI']}</td>");
+      echo("<td><a ");
+      if(isset($game['review'])&&$game['review']!=""){echo(" target='_blank' ");}
+      echo(" href='".$game['review']."'>Review</a></td>");
       if($game['rented']==1){echo("<td>True</td>");} else{echo("<td>False</td>");}
       ?>
         <td><a class="action" href= "<?php echo('editGame.php?id='. $game['id'] ); ?>">Edit</a></td>

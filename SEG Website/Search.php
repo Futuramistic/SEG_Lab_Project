@@ -122,6 +122,7 @@ require("navigation.php");
     echo('<table class="center output" style="text-align: center;">');
     echo('<tr style="text-align: center;"><th class="heading">Available Games</th></tr>');
     echo("<tr>");
+    echo("<th>Image</th>");
     echo("<th>Name</th>");
     echo("<th>Platform</th>");
     echo("<th>Format</th>");
@@ -129,18 +130,23 @@ require("navigation.php");
     echo("<th>Year</th>");
     echo("<th>Price</th>");
     echo("<th>Age</th>");
+    echo("<th>Review</th>");
     echo("<th>Rented?</th>");
     echo("</tr>");
     while($game = mysqli_fetch_assoc($result))
     {
       echo("<tr>");
+      echo("<td><image style='height: 100px;' src='".$game['image']."'/></td>");
       echo("<td>{$game['name']}</td>");
       echo("<td>{$game['platform']}</td>");
       echo("<td>{$game['format']}</td>");
       echo("<td>{$game['developer']}</td>");
       echo("<td>{$game['year']}</td>");
-      echo("<td>{$game['price']}</td>");
+      echo("<td>{$game['price']}$</td>");
       echo("<td>{$game['PEGI']}</td>");
+      echo("<td><a ");
+      if(isset($game['review'])&&$game['review']!=""){echo(" target='_blank' ");}
+      echo(" href='".$game['review']."'>Review</a></td>");
       if($game['rented']==0){echo("<td>Not Rented</td>");}
       else{echo("<td>Rented/td>");}
       echo("</tr>");

@@ -40,7 +40,7 @@ require("navigation.php");
           padding-top: 10px;
           padding-left: 10px;
           padding-right: 10px;
-
+          text-align: center;
         }
         a {
           text-decoration: none;
@@ -69,6 +69,9 @@ require("navigation.php");
 <tr><th><a href="manageGames.php">Go Back</a></th></tr>
 <tr><th>Do you want to delete this game?</th></tr>
 <tr><th>Name</th><td><?php echo($game['name']);?></td></tr>
+<tr><th>Image URL</th><td><?php echo($game['image']);?></td></tr>
+<tr><th>Image URL</th><td><?php echo("<image style='height: 100px;' src='".$game['image']."'/>");?></td></tr>
+<tr><th>Review Site</th><td><?php echo($game['review']);?></td></tr>
 <tr><th>Platform</th><td><?php echo($game['platform']);?></td></tr>
 <tr><th>Format</th><td><?php echo($game['format']);?></td></tr>
 <tr><th>Developer</th><td><?php echo($game['developer']);?></td></tr>

@@ -4,14 +4,14 @@
 <style>
 #loginMain{
 	width:550px;
-	height:300px;  
+	height:300px;
 	float:right;
 	margin-top: 40px;
 	margin-right:30%;
 }
 #button {
-display: block; 
-width: 120px; 
+display: block;
+width: 120px;
 margin-top:25px;
 height 35px;
 }
@@ -26,13 +26,13 @@ height 35px;
 <div id="loginMain">
 		<table align="center"><tr><td><h1 align="center"> Register </h1><td>
 		<td><h1 align="center"> <a href="Login.php" id="login">Login</a> </h1></td> </tr>
-		
+
 
 		<table>
 
 		<form action="awadyhelp.html">
-		<tr> 
-		
+		<tr>
+
 		<td><input type="text" placeholder="First Name" name="firstname"> </td> </tr>
 		<td><input type="text" placeholder="Last Name" name="lastname"> </td> </tr>
 		<td><input type="text" placeholder="User Name" name="username"> </td> </tr>
@@ -43,7 +43,7 @@ height 35px;
 
 		</table>
 
-</form> 
+</form>
 
 </body>
 

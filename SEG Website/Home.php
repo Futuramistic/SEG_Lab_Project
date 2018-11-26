@@ -1,4 +1,7 @@
-<?php require("navigation.php")?>
+<?php
+$title ="Home Page";
+require("database.php");
+require("navigation.php");?>
 <div class = "banner">
 <div class = "bannerinner">
       <div class = "bannercontent">
