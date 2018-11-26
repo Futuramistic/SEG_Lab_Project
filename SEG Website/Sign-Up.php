@@ -30,7 +30,7 @@ height 35px;
 
 		<table>
 
-		<form action="awadyhelp.html">
+		
 		<tr> 
 		
 		<td><input type="text" placeholder="First Name" name="firstname"> </td> </tr>
