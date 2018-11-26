@@ -21,7 +21,7 @@ CREATE TABLE Game (
   rented 	SMALLINT(1) 	NOT NULL,
   PRIMARY KEY (id)
 );
-INSERT INTO Game Values
+INSERT INTO Game(name,platform,format,developer,PEGI,price,year,rented) Values
   ('overwatch','PS4','cd','Blizzard',12,10,2016,0),
   ('overwatch','Xbox','cd','Blizzard',12,10,2016,0),
   ('overwatch','PC','cd','Blizzard',12,10,2016,0),
