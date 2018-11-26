@@ -89,6 +89,17 @@ body, html {
 	top: 0;
 	box-shadow: 20px 20px 20px 16px #111111;
 }
+.banner3{
+	height: 10%;
+	width: 100%;
+	background-color:rgb(52,52,53);
+	background-image: url("bannerImg4.jpg");
+	background-size: cover;
+	background-position: center;
+	display: table;
+	top: 0;
+	box-shadow: 0 4px 8px 0 rgba(3, 3, 3,0.2), 0 6px 20px 0 rgba(3, 3, 3,0.2);
+}
 .banner>.bannerinner{
 	diplay: table-cell;
 	vertical-align: middle;
