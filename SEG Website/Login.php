@@ -61,6 +61,12 @@ height 35px;
 			<table align="center"><tr><td><h1 align="center"> Login </h1><td>
 		
 		       <td><h1 align="center"> <a href="sign-Up.php" id="register">Register</a> </h1></td> </tr>
+
+		<table align="center"><tr><td><h1 align="center"> Login </h1><td>
+		
+		<td><h1 align="center"> <a href="sign-Up.php" id="register">Register</a> </h1></td> </tr>
+		
+
 		
 
 		<table>
