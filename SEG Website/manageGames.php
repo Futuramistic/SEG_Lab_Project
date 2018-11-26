@@ -1,5 +1,7 @@
-<?php require("navigation.php");
-      require("database.php")?>
+<?php
+require("database.php");
+require("navigation.php");
+?>
       <style>
         input.searchForm{
           width: 400px;
@@ -47,7 +49,7 @@
 
 
     <table class="center output" style="text-align: center;">
-    <tr><th><a class="action" href="">Create New Game</a></th></tr>
+    <tr><th><a class="action" href="createGame.php">Create New Game</a></th></tr>
     <tr>
     <th>ID        </th>
     <th>Name      </th>
