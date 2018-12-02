@@ -79,11 +79,11 @@ INSERT INTO Game(name,platform,format,developer,PEGI,price,year,rented) Values
   ('Dota','PC','tape','Valve',13,10,2016,0),
   ('PUBG','XBOX','Disc','BlueHole',18,15,2017,0),
   ('Rocket League','Nintendo Switch','Card','Psyonix',3,10,2015,0),
-  ('Super Smash Bros: Utilmate','Nintendo Switch','Card','Nintendo',12,10,2018,0)
-  ('Monster Hunter Generations Ultimate','Nintendo Switch','Card','Capcom',15,10,2018,0)
-  ('Pikachu Let s go ','Nintendo Switch','Card','Nintendo',12,10,2018,0)
-  ('Legend of Zelda; Breath of Wild','Nintendo Switch','Card','Nintendo',12,10,2018,0)
-  ('Mariokart 8','Nintendo Switch','Card','Nintendo',3,10,2018,0)
+  ('Super Smash Bros: Utilmate','Nintendo Switch','Card','Nintendo',12,10,2018,0),
+  ('Monster Hunter Generations Ultimate','Nintendo Switch','Card','Capcom',15,10,2018,0),
+  ('Pikachu Let s go ','Nintendo Switch','Card','Nintendo',12,10,2018,0),
+  ('Legend of Zelda; Breath of Wild','Nintendo Switch','Card','Nintendo',12,10,2018,0),
+  ('Mariokart 8','Nintendo Switch','Card','Nintendo',3,10,2018,0),
   ('uncharted 4','PS4','Disc','Naughty Dog',18,10,2018,0),
   ('God of War','PS4','Disc','Santa Monica Studio',18,10,2018,0),
   ('Bloodborne','PS4','Disc','From Software',18,10,2018,0),
