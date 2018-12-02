@@ -17,7 +17,7 @@ CREATE TABLE Game (
   developer     VARCHAR(50)	NOT NULL,
   PEGI          INT        	NOT NULL,
   price         FLOAT(10, 2)	NOT NULL,
-  year          Date        	NOT NULL,
+  year          INT(4)        	NOT NULL,
   rented 	SMALLINT(1) 	NOT NULL,
   PRIMARY KEY (id)
 );
