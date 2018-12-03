@@ -42,6 +42,9 @@ height 35px;
 		<td><tr> <td ><input type="password" placeholder="Password" name="password"></td> </tr>
 		<td><tr> <td ><input type="password" placeholder="Confirm Password" name="password"></td> </tr>
 		<td><tr> <td  align="center"> <button id="button"> Sign Up </button> </td></tr>
+		<a href="T&C's.php" >Agree to Terms and Conditions</a> 
+		<input type="checkbox"  id="myCheck" onclick="" >
+
 
 		</table>
 
