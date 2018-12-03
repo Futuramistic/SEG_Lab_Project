@@ -3,7 +3,7 @@ body {
 	height: 100%;
 	width: 100%;
 	color: black;
-	background-color: rgb(52,52,53);
+	background-color: rgb(53,53,53);
 	background-repeat: repeat-y;
 	padding: 0px 0px 0px 0px;
 	font-family: Trebuchet MS, Arial;
@@ -22,7 +22,6 @@ body, html {
 	background-size:cover;
 	display: table;
 	margin: auto;
-
 	/*box-shadow: 0 4px 8px 0 rgba(3, 3, 3,0.1), 0 6px 20px 0 rgba(3, 3, 3,0.1);*/
 	top: 0;
 	/*position: fixed;*/
@@ -56,27 +55,46 @@ body, html {
 	font-size: 18;
 	margin-right: 3%;
 	line-height: 2.5;
-	color: #fefbf0;
+	color: rgb(52,52,52);
 	padding-bottom: 0px;
 }
 .navtext > li>a{
-	color:#fefbf0;
+	color:rgb(52,52,52);
 	text-decoration: none;
 }
 .navtext > li> a:hover{
 	padding-bottom: 12px;
-	border-bottom: solid 3px rgb(180,180,180);
+	border-bottom: solid 3px rgb(52,52,52);
 }
 .banner{
 	height: 100%;
 	width: 100%;
-	background-color:rgb(52,52,53);
-	background-image: url("bannerImg2.jpg");
+	background-color:rgb(52,52,52);
+	background-image: url("rulesbanner.jpg");
 	background-size: cover;
 	background-position: center;
 	display: table;
 	top: 0;
 	box-shadow: 0 4px 8px 0 rgba(3, 3, 3,0.2), 0 6px 20px 0 rgba(3, 3, 3,0.2);
+	color: rgb(52,52,52);
+}
+
+.page{
+	width: 75%;
+	padding-bottom: 90px;
+	background-color: #fefbf0;
+	color: rgb(52,52,52);
+	margin: 0 auto;
+	margin-top: 7%;
+	border-radius: 10px 10px 0 0;
+	margin-bottom: 5%;
+	box-shadow: 0 4px 8px 0 rgba(3, 3, 3,0.3), 0 6px 20px 0 rgba(3, 3, 3,0.3);
+}
+
+.page > .pagecontent{
+	margin-left: 10%;
+	padding-top: 80px;
+	margin-right: 10%;
 }
 .banner2{
 	height: 10%;
@@ -90,7 +108,6 @@ body, html {
 	box-shadow: 20px 20px 20px 16px #111111;
 }
 .banner>.bannerinner{
-	diplay: table-cell;
 	vertical-align: middle;
 	width: 100%;
 	max-width: none;
@@ -100,25 +117,25 @@ body, html {
 	margin: 0 auto;
 	text-align:center;
 	font-size: 40;
-	color: white;
-	margin-top: 10%;
+	color: rgb(52,52,52);
+	margin-top: 65px;
 	line-height: 0.5;
 }
 .bannercontent > h2
 {
 		/*text-shadow: 2px 2px 8px rgba(3, 3, 3,0.5);*/
 		line-height: 0.2;
-		font-family: "Trebuchet MS";
+		font-family: Trebuchet MS;
 		font-weight: 900;
 		font-size: 60;
-		color: rgb(52,52,53);
+		color: rgb(52,52,52);
 }
 .bannercontent > article
 {
 		padding-top: 8%;
 		text-shadow: 2px 2px 8px rgba(3, 3, 3,0.5);
 		line-height: 1;
-		font-family: "Trebuchet MS";
+		font-family: Trebuchet MS;
 		font-weight: 100;
 		max-width: 60%;
 		margin: 0 auto;
@@ -155,7 +172,7 @@ body, html {
 	float:left;
 }
 .btn{
-	font-family: "Arial";
+	font-family: Arial;
 	font-size: 50%;
 	font-weight: 600;
 	color: #fefbf0;
@@ -229,7 +246,7 @@ max-width: 30%;
 text-align: right;
 padding-top: 0%;
 color: #fefbf0;
-font-family: "Arial";
+font-family: Arial;
 font-size: 115%;
 font-weight:200;
 line-height: 140%;
