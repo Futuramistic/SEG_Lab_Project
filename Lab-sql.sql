@@ -116,9 +116,9 @@ INSERT INTO Game(name,platform,format,developer,PEGI,price,year,rented) Values
   ('Ace Combat 5','PS2','Disc','Namco',12,10,2004,0),
   ('Ace Combat Zero','PS2','Disc','Namco',12,10,2006,0),
   ('Resident Evil 4','PS2','Disc','Capcom',18,10,2004,0),
-  ('Halo: Combat Evolved','XBOX','Disc','Bungie',12,10,2001,0)
-  ('Halo 2','XBOX','Disc','Bungie',12,10,2001,0)
-  ('Star Wars: Knights of the Old Republic','XBOX','Dsic','Bioware',12,10,2003,0)
+  ('Halo: Combat Evolved','XBOX','Disc','Bungie',12,10,2001,0),
+  ('Halo 2','XBOX','Disc','Bungie',12,10,2001,0),
+  ('Star Wars: Knights of the Old Republic','XBOX','Dsic','Bioware',12,10,2003,0),
   ('Harry Potter 1-7 BluRay set','BluRay','Disc','Warner Bros',12,10,2016,0),
   ('Star Wars The Prequel Trilogy','BluRay','Disc','20th Century Fox',12,10,2011,0),
   ('Termintor Quadrilogy','DVD','Disc','Sony Entertainment',18,10,2015,0),
