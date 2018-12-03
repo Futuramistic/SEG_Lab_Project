@@ -1,23 +1,14 @@
-<<<<<<< HEAD
 <?php
-$title ="Home Page";
-require("database.php");
-require("navigation.php");?>
-=======
-<html>
-<head>
-<title>The Computer Gaming Society</title>
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
-<body>
->>>>>>> 275edd1b28f0a4eceaf7d04f6d7ed1b085ad00e1
-<div class = "banner">
-<?php require("navigation.php")?>
+require("../../private/initialize.php");
+createHeader("Home Page","stylesheets/stylesheet.css");
+require("navigation.php");
+?>
 <div class = "bannerinner">
       <div class = "bannercontent">
       <h2>Looking for a game?</h2>
-			<input type="text" placeholder="Search for games">
-			<button type="submit">&#128269;</button>
+      <form action="Search.php" method="GET">
+			<input type="text" name="name" placeholder="Search for games">
+			<button type="submit" name="submit" value="1" style="border-radius:10px;">&#128269;</button></form>
 			<article>Our library contains a wide variety of games to rent - there is something for everyone!
 			Search our library to find something for you.</article>
 			</div>
@@ -44,17 +35,11 @@ require("navigation.php");?>
 			</div>
 		</div>
 	</div>
-
 	<div class = "banner2">
 	    <div class = "bannerinner2">
 	      <div class = "bannercontent2">
 				</div>
 			</div>
 			</div>
-
-
 </div>
-
 </body>
-
-</html>
