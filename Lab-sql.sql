@@ -113,6 +113,12 @@ INSERT INTO Game(name,platform,format,developer,PEGI,price,year,rented) Values
   ('Tom Clancys Rainbow Six: Seige','XBOX ONE','Disc','Ubisoft',18,10,2016,0),
   ('Tom Clancys The Division','PS4','Disc','Ubisoft',18,10,2016,0),
   ('Tom Clancys The Division','XBOX ONE','Disc','Ubisoft',18,10,2016,0),
+  ('Ace Combat 5','PS2','Disc','Namco',12,10,2004,0),
+  ('Ace Combat Zero','PS2','Disc','Namco',12,10,2006,0),
+  ('Resident Evil 4','PS2','Disc','Capcom',18,10,2004,0),
+  ('Halo: Combat Evolved','XBOX','Disc','Bungie',12,10,2001,0)
+  ('Halo 2','XBOX','Disc','Bungie',12,10,2001,0)
+  ('Star Wars: Knights of the Old Republic','XBOX','Dsic','Bioware',12,10,2003,0)
   ('Harry Potter 1-7 BluRay set','BluRay','Disc','Warner Bros',12,10,2016,0),
   ('Star Wars The Prequel Trilogy','BluRay','Disc','20th Century Fox',12,10,2011,0),
   ('Termintor Quadrilogy','DVD','Disc','Sony Entertainment',18,10,2015,0),
@@ -121,9 +127,10 @@ INSERT INTO Game(name,platform,format,developer,PEGI,price,year,rented) Values
   ('The wold of Wall street','DVD','Disc','Paramount',18,10,2013,0),
   ('Black Panther','DVD','Disc','Marvel Entertainment',12,10,2018,0),
   ('Iron Man','DVD','Disc','Marvel Entertainment',12,10,2008,0),
-  ('Kung Fu Panda','DVA','Disc','Paramount',6,10,2008,0),
-  ('Kung Fu Hustle','DVA','Disc','Paramount',12,10,2004,0),
+  ('Kung Fu Panda','DVD','Disc','Paramount',6,10,2008,0),
+  ('Kung Fu Hustle','DVD','Disc','Paramount',12,10,2004,0),
   ('Ready Player One','DVD','Disc','Warner Bros',14,10,2018,0);
+  
 
 
 
