@@ -1,9 +1,16 @@
+<<<<<<< HEAD
+<?php
+$title ="Home Page";
+require("database.php");
+require("navigation.php");?>
+=======
 <html>
 <head>
 <title>The Computer Gaming Society</title>
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
+>>>>>>> 275edd1b28f0a4eceaf7d04f6d7ed1b085ad00e1
 <div class = "banner">
 <?php require("navigation.php")?>
 <div class = "bannerinner">

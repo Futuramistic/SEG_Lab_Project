@@ -69,6 +69,8 @@ require("navigation.php");
         $game['price']= $_POST['price'];
         $game['PEGI']= $_POST['PEGI'];
         $game['rented'] = $_POST['rented'];
+        $game['image'] = $_POST['image']??"";
+        $game['review'] = $_POST['review']??"";
         if(alter_game($game))
         {
           header('Location:manageGames.php');
@@ -91,6 +93,8 @@ require("navigation.php");
       <tr><th>Year</th><td><input  class ="searchForm" type="text" placeholder="Year" name="year" value="<?php echo($game['year'])?>"/></td></tr>
       <tr><th>Price</th><td><input  class ="searchForm" type="text" placeholder="Price" name="price" value="<?php echo($game['price'])?>"/></td></tr>
       <tr><th>Age</th><td><input  class ="searchForm" type="text" placeholder="Minimum Age" name="PEGI" value="<?php echo($game['PEGI'])?>"/></td></tr>
+      <tr><th>Image</th><td><input  class ="searchForm" type="text" placeholder="Image URL" name="image" value="<?php echo($game['image'])?>"/></td></tr>
+      <tr><th>Review</th><td><input  class ="searchForm" type="text" placeholder="Review URL" name="review" value="<?php echo($game['review'])?>"/></td></tr>
       <tr><th>Rented</th><td><input type="hidden" name="rented" value="0"/><input type="checkbox" name="rented"  <?php if($game['rented']==1) echo("checked")?> value="1"/></td></tr>
       <tr><th></th><td><button type="submit" name="id" value="<?php echo($gameID['id']);?>">Submit</button></td></tr>
       </table>

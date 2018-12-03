@@ -83,7 +83,9 @@ require("navigation.php");
       <tr><th>Password</th><td><?php echo($user['password']);?></td></tr>
       <tr><th>E-mail</th><td><?php echo($user['email']);?></td></tr>
       <tr><th>User Name</th><td><?php echo($user['user_name']);?></td></tr>
+      <tr><th>Fees</th><td><?php echo($user['fees']."$");?></td></tr>
       <tr><th>Admin</th><td><?php if($user['admin']==1){echo ("True");}else{echo("False");}?></td></tr>
+      <tr><th>Administration</th><td><?php if($user['administration']==1){echo ("True");}else{echo("False");}?></td></tr>
       <tr><th>Banned</th><td><?php if($user['banned']==1){echo ("True");}else{echo("False");}?></td></tr>
       <tr><th></th><td><button type="submit" name="userID" value="<?php echo($userID['userID']);?>">Delete</button></td></tr>
       </table>

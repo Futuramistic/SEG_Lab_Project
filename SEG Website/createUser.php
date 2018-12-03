@@ -65,6 +65,7 @@ require("navigation.php");
         $user['password']=$_POST['password']??"";
         $user['email']=$_POST['email']??"";
         $user['user_name']=$_POST['user_name']??"";
+        $user['administration']=$_POST['administration']??"";
         $user['admin']=$_POST['admin']??"";
         if($user['admin']==1)
         {
@@ -88,6 +89,7 @@ require("navigation.php");
       <tr><th>E-mail</th><td><input  class ="searchForm" type="text" placeholder="E-Mail" name="email"/></td></tr>
       <tr><th>User Name</th><td><input  class ="searchForm" type="text" placeholder="User Name" name="user_name"/></td></tr>
       <tr><th>Admin</th><td><input type="hidden" name="admin" value="0"/><input type="checkbox" name="admin" value="1"/></td></tr>
+      <tr><th>Administration</th><td><input type="hidden" name="administration" value="0"/><input type="checkbox" name="administration" value="1"/></td></tr>
       <tr><th>Banned</th><td><input type="hidden" name="banned" value="0"/><input type="checkbox" name="banned"value="1"/></td></tr>
       <tr><th></th><td><button type="submit">Submit</button></td></tr>
       </table>

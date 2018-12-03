@@ -17,11 +17,11 @@ CREATE TABLE Game (
   developer     VARCHAR(50)	NOT NULL,
   PEGI          INT        	NOT NULL,
   price         FLOAT(10, 2)	NOT NULL,
-  year          Date        	NOT NULL,
+  year          Int(4)       	NOT NULL,
   rented 	SMALLINT(1) 	NOT NULL,
   PRIMARY KEY (id)
 );
-INSERT INTO Game(name,platform,format,developer,PEGI,price,year,rented) Values
+INSERT INTO Game Values (name, platform, format,developer,PEGI,price,year,rented)
   ('overwatch','PS4','cd','Blizzard',12,10,2016,0),
   ('overwatch','Xbox','cd','Blizzard',12,10,2016,0),
   ('overwatch','PC','cd','Blizzard',12,10,2016,0),
@@ -84,14 +84,15 @@ CREATE TABLE User (
   password   VARCHAR(255)        NOT NULL,
   email      VARCHAR(50)        NOT NULL,
   user_name  VARCHAR(50)        NOT NULL UNIQUE,
-  fees        FLOAT(10, 2)  DEFAULT '0.00',
+  fees        FLOAT(10, 2) DEFAULT '0.00',
   admin      SMALLINT(1)        NOT NULL,
   administration SMALLINT(1)    NOT NULL,
-  banned     SMALLINT(1)        NOT NULL DEFAULT '0',
+  banned     SMALLINT(1)        NOT NULL,
   PRIMARY KEY (userID)
 );
 
-CREATE TABLE Renting (
+CREATE TABLE Renting
+(
   id       VARCHAR(50) UNIQUE NOT NULL,
   rentDate DATETIME           NOT NULL,
   dueDate  DATETIME           NOT NULL,

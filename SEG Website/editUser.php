@@ -70,7 +70,9 @@ require("navigation.php");
           <tr><th>Last Name</th><td><input  class ="searchForm" type="text" placeholder="Second Name" name="secondName" value="<?php echo($user['secondName']);?>"/></td></tr>
           <tr><th>E-mail</th><td><input  class ="searchForm" type="text" placeholder="E-Mail" name="email" value="<?php echo($user['email']);?>"/></td></tr>
           <tr><th>User Name</th><td><input  class ="searchForm" type="text" placeholder="User Name" name="user_name" value="<?php echo($user['user_name']);?>"/></td></tr>
+          <tr><th>Fees</th><td><input  class ="searchForm" type="text" placeholder="Fees" name="fees" value="<?php echo($user['fees']);?>"/></td></tr>
           <tr><th>Admin</th><td><input type="hidden" name="admin" value="0"/><input type="checkbox" name="admin" value="1" <?php if($user['admin']==1){echo ("checked");}?>/></td></tr>
+          <tr><th>Administration</th><td><input type="hidden" name="administration" value="0"/><input type="checkbox" name="administration" <?php if($user['administration']==1){echo ("checked");}?> value="1"/></td></tr>
           <tr><th>Banned</th><td><input type="hidden" name="banned" value="0"/><input type="checkbox" name="banned"value="1" <?php if($user['banned']==1){echo ("checked");}?>/></td></tr>
           <tr><th></th><td><button type="submit" name="userID" value="<?php echo($userID['userID']);?>">Submit</button></td></tr>
           </table>
@@ -89,6 +91,8 @@ require("navigation.php");
         {
           dump_admin();
         }
+        $user['fees']=$_POST['fees']??"0.00";
+        $user['administration']=$_POST['administration']??"";
         $user['banned']=$_POST['banned']??"";
         $user['userID']=$_POST['userID']??"";
         if(alter_user($user))

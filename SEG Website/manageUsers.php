@@ -80,7 +80,7 @@ require("database.php"); ?>
       echo("<td>{$user['password']}</td>");
       echo("<td>{$user['email']}</td>");
       echo("<td>{$user['user_name']}</td>");
-      echo("<td>{$user['fees']}</td>");
+      echo("<td>{$user['fees']} $</td>");
       if($user['admin']==1){echo("<td>True</td>");}else{echo("<td>False</td>");}
       if($user['administration']==1){echo("<td>True</td>");}else{echo("<td>False</td>");}
       if($user['banned']==1){echo("<td>True</td>");}else{echo("<td>False</td>");}
