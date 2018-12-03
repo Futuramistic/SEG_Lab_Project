@@ -74,9 +74,9 @@ require("navigation.php");
     </select>
 		</div>
 		<div class = "paneldivision" style ="height: 39px;">
-			<input type="text" placeholder="Min Price" style="margin-bottom: 4px; width: 141px; float: left; font-size: 15px;">
+			<input type="text" placeholder="Min Price" name="minprice" style="margin-bottom: 4px; width: 141px; float: left; font-size: 15px;">
 		   <article style="float: left; padding-left: 4px">_</article>
-			<input type="text" placeholder="Max Price" style="margin-left: 4px; width:141px; float: left; font-size: 15px; ">
+			<input type="text" placeholder="Max Price" name="maxprice" style="margin-left: 4px; width:141px; float: left; font-size: 15px; ">
 
 		</div>
 				<button class="search" type="submit" name="submit" value="1">Search!</button>
@@ -89,7 +89,8 @@ require("navigation.php");
         $game['name']=$_GET['name'] ?? "";
         $game['developer']=$_GET['developer'] ?? "";
         $game['year']=$_GET['year'] ?? "";
-        $game['price']=$_GET['price'] ?? "";
+        $game['minprice']=$_GET['minprice'] ?? "";
+        $game['maxprice']=$_GET['maxprice'] ?? "";
         $game['platform']=$_GET['platform']?? "";
         $game['format']=$_GET['format'] ?? "";
         $game['PEGI']=$_GET['PEGI'] ?? "";

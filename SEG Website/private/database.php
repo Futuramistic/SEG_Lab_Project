@@ -133,9 +133,13 @@ function find_games($game)
     {
       $sql .= " AND PEGI = '" . db_escape($db,$game['PEGI']) . "'";
     }
-    if(is_present($game['price']))
+    if(is_present($game['maxprice']))
     {
-      $sql .= " AND price = '" . db_escape($db,$game['price']) . "'";
+      $sql .= " AND price <= '" . db_escape($db,$game['maxprice']) . "'";
+    }
+    if(is_present($game['minprice']))
+    {
+      $sql .= " AND price >= '" . db_escape($db,$game['minprice']) . "'";
     }
     $sql.=" ORDER BY name";
     $sql.=";";

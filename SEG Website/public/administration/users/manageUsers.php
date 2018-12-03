@@ -11,7 +11,6 @@ require("../../stylesheets/style.html");
     <th>ID        </th>
     <th>First Name      </th>
     <th>Last Name  </th>
-    <th>Password Hash    </th>
     <th>E-mail </th>
     <th>User Name      </th>
     <th>Fees      </th>
@@ -26,7 +25,7 @@ require("../../stylesheets/style.html");
       echo("<td>{$user['userID']}</td>");
       echo("<td>{$user['firstName']}</td>");
       echo("<td>{$user['secondName']}</td>");
-      echo("<td>{$user['password']}</td>");
+
       echo("<td>{$user['email']}</td>");
       echo("<td>{$user['user_name']}</td>");
       echo("<td>{$user['fees']} $</td>");
