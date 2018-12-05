@@ -1,7 +1,7 @@
 <?php
 require("../../private/initialize.php");
-createHeader("Login Page","stylesheets/stylesheet-account.css");
-require("navigation.php"); 
+createHeader("Login Page","stylesheets/stylesheet-login.css");
+require("navigation.php");
 require("../stylesheets/style.html");
 ?>
 </head>
