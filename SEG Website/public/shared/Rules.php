@@ -1,12 +1,8 @@
-<html>
-<head>
-<title>The Computer Gaming Society</title>
-	<link rel="stylesheet" type="text/css" href="stylesheet-rules.css">
-</head>
-
-<body>
-<div class = "banner">
-	<?php require("navigation.php")?>
+<?php
+require("../../private/initialize.php");
+createHeader("Home Page","stylesheets/stylesheet-rules.css");
+require("navigation.php");
+?>
     <div class = "bannerinner">
       <div class = "bannercontent">
 				<h2>About Us and Rules</h2>
