@@ -1,62 +1,47 @@
-
 <?php
-require("database.php"); ?>
-<html>
-<head>
-<title>The Computer Gaming Society</title>
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+require("../../private/initialize.php");
+createHeader("Login Page","stylesheets/stylesheet-account.css");
+require("navigation.php"); 
+require("../stylesheets/style.html");
+?>
 </head>
-
-
 <body>
-<div class = "banner">
-<?php
-require("navigation.php");
-  ?>
-
-<style>
-#loginMain{
-	width:550px;
-	height:300px;  
-	float:right;
-	margin-top: 40px;
-	margin-right:30%;
-}
-#button {
-display: block; 
-width: 120px; 
-margin-top:25px;
-height 35px;
-}
-
-#login{ text-decoration: none; color:black; }
-</style>
-
-</head>
-
-
-<body>
-<div id="loginMain">
-		<table align="center"><tr><td><h1 align="center"> Register </h1><td>
-		<td><h1 align="center"> <a href="Login.php" id="login">Login</a> </h1></td> </tr>
-		
-
-		<table>
-
-		<form action="awadyhelp.html">
-		<tr> 
-		
-		<td><input type="text" placeholder="First Name" name="firstname"> </td> </tr>
-		<td><input type="text" placeholder="Last Name" name="lastname"> </td> </tr>
-		<td><input type="text" placeholder="User Name" name="username"> </td> </tr>
-		<td><input type="text" placeholder="Email" name="Email"> </td> </tr>
-		<td><tr> <td ><input type="password" placeholder="Password" name="password"></td> </tr>
-		<td><tr> <td ><input type="password" placeholder="Confirm Password" name="password"></td> </tr>
-		<td><tr> <td  align="center"> <button id="button"> Sign Up </button> </td></tr>
-
-		</table>
-
-</form> 
-   <?php
+		<div class = "searchpanel" id="loginMain">
+			<div class = "tab">
+			<li style="float:left; background-color: rgb(250,250,250); box-shadow: inset -1px 2px 15px rgba(190, 190, 190,0.2);"><a href="Login.php" style = "color: rgb(117,117,117); text-decoration:none">Login</a></li>
+		</div>
+		<div class = "tab">
+			<li style="float:right; background-color: white"><a href="Sign-Up.php" style = "color: rgb(117,117,117); text-decoration:none">Sign Up</a></li>
+		</div>
+		<form action = "Sign-Up.php">
+			<div class = "paneldivision">
+			<input type="text" placeholder="First name" name="firstname">
+		</div>
+		<div class = "paneldivision">
+		<input type="text" placeholder="Last name" name="lastname">
+	</div>
+	<div class = "paneldivision">
+	<input type="text" placeholder="Username" name="username">
+	</div>
+	<div class = "paneldivision">
+	<input type="text" placeholder="Email" name="Email">
+</div>
+<div class = "paneldivision">
+<input type="text" placeholder="Password" name="password">
+</div>
+<div class = "paneldivision" id="lastdivision">
+<input type="text" placeholder="Confirm Password" name="password">
+</div>
+<div class = "paneldivision">
+	<div class = "checkbox">
+	<article style ="padding-left: 85px;"> I agree to oblige to the <u><a href="Rules.php" style = "color: rgb(117,117,117);">rules</a></u> of the society</article>
+		<input type="checkbox"  id="myCheck" onclick="">
+	</div>
+</div>
+			<button type="submit" id="button">Sign Up</button>
+			</form>
+	</div>
+	<?php
 require("footer.php"); ?>
-
+	</body>
+	</html>
