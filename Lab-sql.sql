@@ -21,7 +21,7 @@ CREATE TABLE Game (
   rented 	SMALLINT(1) 	NOT NULL,
   PRIMARY KEY (id)
 );
-INSERT INTO Game Values (name, platform, format,developer,PEGI,price,year,rented)
+INSERT INTO Game(name, platform, format,developer,PEGI,price,year,rented) Values
   ('overwatch','PS4','cd','Blizzard',12,10,2016,0),
   ('overwatch','Xbox','cd','Blizzard',12,10,2016,0),
   ('overwatch','PC','cd','Blizzard',12,10,2016,0),
@@ -88,15 +88,16 @@ CREATE TABLE User (
   admin      SMALLINT(1)        NOT NULL,
   administration SMALLINT(1)    NOT NULL,
   banned     SMALLINT(1)        NOT NULL,
+  banDate DATETIME,
   PRIMARY KEY (userID)
 );
 
 CREATE TABLE Renting
 (
-  id       VARCHAR(50) UNIQUE NOT NULL,
+  id       INT(50) AUTO_INCREMENT,
   rentDate DATETIME           NOT NULL,
   dueDate  DATETIME           NOT NULL,
-  duration DATETIME           NOT NULL,
+  returnDate DATETIME,
   userid   INT(50)   NOT NULL,
   gameid   INT(50)  NOT NULL,
   extentions INT(2) DEFAULT '0',
