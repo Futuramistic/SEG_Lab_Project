@@ -22,9 +22,9 @@ CREATE TABLE Game (
   PRIMARY KEY (id)
 );
 INSERT INTO Game(name,platform,format,developer,PEGI,price,year,rented,image,review) Values
-  ('overwatch','PS4','Disc','Blizzard',12,20,2016,0,'https://images-na.ssl-images-amazon.com/images/I/811pj8JZ8iL._SL1500_.jpg','https://uk.ign.com/articles/2016/05/28/overwatch-review'),
-  ('overwatch','XBOX One','Disc','Blizzard',12,20,2016,0,'https://images-na.ssl-images-amazon.com/images/I/810AUO3CUzL._SY445_.jpg','https://uk.ign.com/articles/2016/05/28/overwatch-review'),
-  ('overwatch','PC','Disc','Blizzard',12,20,2016,0,'https://images-na.ssl-images-amazon.com/images/I/917xadgCebL._SL1500_.jpg','https://uk.ign.com/articles/2016/05/28/overwatch-review'),
+  ('Overwatch','PS4','Disc','Blizzard',12,20,2016,0,'https://images-na.ssl-images-amazon.com/images/I/811pj8JZ8iL._SL1500_.jpg','https://uk.ign.com/articles/2016/05/28/overwatch-review'),
+  ('Overwatch','XBOX ONE','Disc','Blizzard',12,20,2016,0,'https://images-na.ssl-images-amazon.com/images/I/810AUO3CUzL._SY445_.jpg','https://uk.ign.com/articles/2016/05/28/overwatch-review'),
+  ('Overwatch','PC','Disc','Blizzard',12,20,2016,0,'https://images-na.ssl-images-amazon.com/images/I/917xadgCebL._SL1500_.jpg','https://uk.ign.com/articles/2016/05/28/overwatch-review'),
   ('Heroes of the Storm','PC','Disc','Blizzard',12,10,2015,0,'https://i.ytimg.com/vi/wPk004vsjuE/maxresdefault.jpg','https://uk.ign.com/articles/2018/03/20/heroes-of-the-storm-review-2018'),
   ('Destiny','PS3','Disc','Bungie',16,10,2014,0,'https://news-cdn.softpedia.com/images/news2/Destiny-Was-Scraped-5-or-6-Times-Before-Release-Last-Iteration-Developed-in-1-Year-468274-2.jpg','https://uk.ign.com/games/destiny'),
   ('Destiny','PS4','Disc','Bungie',16,10,2014,0,'https://news-cdn.softpedia.com/images/news2/Destiny-Was-Scraped-5-or-6-Times-Before-Release-Last-Iteration-Developed-in-1-Year-468274-2.jpg','https://uk.ign.com/games/destiny'),
