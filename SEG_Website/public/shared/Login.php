@@ -1,26 +1,10 @@
 <?php
 require("../../private/initialize.php");
-createHeader("Login Page","stylesheets/stylesheet.css");
+createHeader("Login Page","stylesheets/stylesheet-login.css");
 require("navigation.php");
 require("../stylesheets/style.html");
 ?>
-<style>
-#loginMain{
-	width:550px;
-	height:300px;
-	float:right;
-	margin-top: 40px;
-	margin-right:30%;
-}
-#button {
-display: block;
-width: 120px;
-margin-top:25px;
-height 35px;
-}
-#login{ text-decoration: none; color:black; }
-#register{ text-decoration: none; color:black; }
-</style>
+
 <?php
 
 	if(check_login())
@@ -49,18 +33,24 @@ height 35px;
 	echo display_login_errors($errors);
 ?>
 
-
 <body>
-<div id="loginMain">
-		<table align="center"><tr><td><h1 align="center"> Login </h1><td>
-		<td><h1 align="center"> <a href="Sign-Up.php" id="register">Register</a> </h1></td> </tr>
-		<table>
-		<form action="Login.php" method="post">
-		<tr><td><input type="text" placeholder="Enter your username" name="username"> </td> </tr>
-		<tr> <td ><input type="password" placeholder="Password" name="password"></td> </tr>
-		<tr> <td  align="center"> <button class="login" type="submit"> Login </button> </td></tr>
-    </form>
-    </table>
-</div>
+
+		<div class = "searchpanel" id="loginMain">
+			  <div class = "tab">
+			     <li style="float:left; background-color: white;"><a href="Login.php" style = "color: rgb(117,117,117); text-decoration:none">Login</a></li>
+		      </div>
+		      <div class = "tab">
+			     <li style="float:right; background-color: rgb(250,250,250); box-shadow: inset 2px -1px 15px rgba(190, 190, 190,0.2);"><a href="Sign-Up.php" id="register" style = "color: rgb(117,117,117); text-decoration:none">Sign Up</a></li>
+		      </div>
+    		<form action="Login.php" method="post">
+			     <div class = "paneldivision">
+			         <input type="text" placeholder="Username" name="username">
+		         </div>
+        	   	 <div class = "paneldivision" style="margin-bottom: 10px;">
+		              <input type="password" placeholder="Password" name="password">
+		         </div>
+			     <button type="submit" class="button">Login</button>
+    		</form>
+    	   </div>
 </body>
 </html>
