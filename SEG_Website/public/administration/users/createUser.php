@@ -31,11 +31,10 @@ require("../../stylesheets/style.html");
           $args['banned']="0";
         }
         $user = new User($args);
+        $user->merge_attributes($args);
         $result = $user->create();
         if($result===true)
         {
-          $user->merge_attributes($args);
-          $user->update();
           header('Location:manageUsers.php');
           exit();
         }

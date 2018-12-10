@@ -1,53 +1,76 @@
 <?php
 require("../../private/initialize.php");
-createHeader("Home Page","stylesheets/stylesheet.css");
+createHeader("Login Page","stylesheets/stylesheet-login.css");
 require("navigation.php");
-?>
-<style>
-#loginMain{
-	width:550px;
-	height:300px;
-	float:right;
-	margin-top: 40px;
-	margin-right:30%;
+require("../stylesheets/style.html");
+if(is_post_request())
+{
+		$args=[];
+		$args['firstName']=$_POST['firstName']??NULL;
+		$args['secondName']=$_POST['secondName']??NULL;
+		$args['password1']=$_POST['password1']??NULL;
+		$args['password2']=$_POST['password2']??NULL;
+		$args['bare_password']=$_POST['password1']??NULL;
+		$args['email']=$_POST['email']??NULL;
+		$args['user_name']=$_POST['username']??NULL;
+		$user = new User($args);
+		$user->merge_attributes($args);
+		$result = $user->create();
+		if($result===true&&$_POST['rules']==1)
+		{
+			set_login_variables();
+			header("Location:Accounts.php");
+			exit();
+		}
+		else
+		{
+			if($result!==true)
+			{
+				$errors = $result;
+			}
+			$errors[]="You have to accept rules of our society to join!";
+		}
 }
-#button {
-display: block;
-width: 120px;
-margin-top:25px;
-height 35px;
-}
-
-#login{ text-decoration: none; color:black; }
-</style>
-
+	echo display_errors($errors);
+	?>
 </head>
-
-
 <body>
-<div id="loginMain">
-		<table align="center"><tr><td><h1 align="center"> Register </h1><td>
-		<td><h1 align="center"> <a href="Login.php" id="login">Login</a> </h1></td> </tr>
 
-
-		<table>
-
-		<form action="awadyhelp.html">
-		<tr>
-
-		<td><input type="text" placeholder="First Name" name="firstname"> </td> </tr>
-		<td><input type="text" placeholder="Last Name" name="lastname"> </td> </tr>
-		<td><input type="text" placeholder="User Name" name="username"> </td> </tr>
-		<td><input type="text" placeholder="Email" name="Email"> </td> </tr>
-		<td><tr> <td ><input type="password" placeholder="Password" name="password"></td> </tr>
-		<td><tr> <td ><input type="password" placeholder="Confirm Password" name="password"></td> </tr>
-		<td><tr> <td  align="center"> <button id="button"> Sign Up </button> </td></tr>
-		<a href="T&C's.php" >Agree to Terms and Conditions</a> 
-		<input type="checkbox"  id="myCheck" onclick="" >
-
-
-		</table>
-
-</form>
-   <?php
+		<div class = "searchpanel" id="loginMain">
+			<div class = "tab">
+			<li style="float:left; background-color: rgb(250,250,250); box-shadow: inset -1px 2px 15px rgba(190, 190, 190,0.2);"><a href="Login.php" style = "color: rgb(117,117,117); text-decoration:none">Login</a></li>
+		</div>
+		<div class = "tab">
+			<li style="float:right; background-color: white"><a href="Sign-Up.php" style = "color: rgb(117,117,117); text-decoration:none">Sign Up</a></li>
+		</div>
+<form method="POST" action="Sign-Up.php">
+			<div class = "paneldivision">
+			<input type="text" placeholder="First name" name="firstName">
+		</div>
+		<div class = "paneldivision">
+		<input type="text" placeholder="Last name" name="secondName">
+	</div>
+	<div class = "paneldivision">
+	<input type="text" placeholder="Username" name="username">
+	</div>
+	<div class = "paneldivision">
+	<input type="text" placeholder="Email" name="email">
+</div>
+<div class = "paneldivision">
+<input type="password" placeholder="Password" name="password1">
+</div>
+<div class = "paneldivision" id="lastdivision">
+<input type="password" placeholder="Confirm Password" name="password2">
+</div>
+<div class = "paneldivision">
+	<div class = "checkbox">
+	<article style ="padding-left: 85px;"> I agree to oblige to the <u><a href="Rules.php" style = "color: rgb(117,117,117);">rules</a></u> of the society</article>
+		<input type="hidden" name="rules" value="0">
+		<input type="checkbox"  id="myCheck" onclick="1" name="rules" value="1">
+	</div>
+</div>
+			<button type="submit" id="button">Sign Up</button>
+			</form>
+	</div>
+	<?php
 require("footer.php"); ?>

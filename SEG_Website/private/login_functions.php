@@ -68,6 +68,11 @@ function login()
   {
     return $errors;
   }
+  return set_login_variables();
+}
+
+function set_login_variables()
+{
   $user = User::find_by_username($_POST['username']);
   $_SESSION['id']=$user->userID;
   $_SESSION['username']=$user->user_name;
