@@ -1,6 +1,6 @@
 <?php
 require("../../private/initialize.php");
-createHeader("Home Page","stylesheets/stylesheet-rules.css");
+createHeader("The Computer Gaming Society","stylesheets/stylesheet-rules.css");
 require("navigation.php");
 ?>
     <div class = "bannerinner">

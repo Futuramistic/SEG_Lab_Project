@@ -1,6 +1,6 @@
 <?php
 require("../../../private/initialize.php");
-createHeader("Login Page","stylesheets/stylesheet.css");
+createHeader("The Computer Gaming Society","stylesheets/stylesheet.css");
 require('../../shared/navigation.php');
 require("../../stylesheets/style.html");
       check_staff();

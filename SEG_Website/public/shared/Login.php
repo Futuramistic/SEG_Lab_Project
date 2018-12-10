@@ -1,6 +1,6 @@
 <?php
 require("../../private/initialize.php");
-createHeader("Login Page","stylesheets/stylesheet-login.css");
+createHeader("The Computer Gaming Society","stylesheets/stylesheet-login.css");
 require("navigation.php");
 require("../stylesheets/style.html");
 ?>
@@ -25,7 +25,7 @@ require("../stylesheets/style.html");
 			exit();
 		}
   }
-	
+
 	$error=resolve_errors();
 	if($error!==false){
 		$errors=$error;

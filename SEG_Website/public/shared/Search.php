@@ -1,6 +1,6 @@
 <?php
 require("../../private/initialize.php");
-createHeader("Home Page","stylesheets/stylesheet-search.css");
+createHeader("The Computer Gaming Society","stylesheets/stylesheet-search.css");
 require("navigation.php");
 ?>
   <style>
