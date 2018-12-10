@@ -186,8 +186,8 @@ class Game extends DatabaseObject
   public $developer;
   public $PEGI;
   public $price;
-  public $minprice;
-  public $maxprice;
+  public $minprice='0.00';
+  public $maxprice='10000.00';
   public $year;
   public $rented;
 
@@ -203,6 +203,8 @@ class Game extends DatabaseObject
     $this->price = $args['price']??'0';
     $this->year = $args['year']??'0';
     $this->rented = $args['rented']??'';
+    $this->minprice=$args['minprice']??'0';
+    $this->maxprice=$args['maxprice']??'0';
   }
 }
 ?>

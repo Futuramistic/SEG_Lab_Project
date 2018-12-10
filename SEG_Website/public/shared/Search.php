@@ -84,8 +84,8 @@ require("navigation.php");
         $args['name']=$_GET['name'] ?? "";
         $args['developer']=$_GET['developer'] ?? "";
         $args['year']=$_GET['year'] ?? "";
-        $args['minprice']=$_GET['minprice'] ?? "";
-        $args['maxprice']=$_GET['maxprice'] ?? "";
+        $args['minprice']=$_GET['minprice'] ?? "0.00";
+        $args['maxprice']=$_GET['maxprice'] ?? "1000.00";
         $args['platform']=$_GET['platform']?? "";
         $args['format']=$_GET['format'] ?? "";
         $args['PEGI']=$_GET['PEGI'] ?? "";
@@ -109,7 +109,7 @@ require("navigation.php");
           foreach($games as $gameResult)
           {
             echo("<tr>");
-            echo("<td><image style='height: 150px;' src='".$gameResult->image."'/></td>");
+            echo("<td><image style='height: 100px;' src='".$gameResult->image."'/></td>");
             echo("<td>{$gameResult->name}</td>");
             echo("<td>{$gameResult->platform}</td>");
             echo("<td>{$gameResult->format}</td>");
