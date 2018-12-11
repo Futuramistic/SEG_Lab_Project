@@ -1,0 +1,199 @@
+body {
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+	color: black;
+	background-color: rgb(239,239,239);
+	background-repeat: repeat-y;
+	padding: 0px 0px 0px 0px;
+	font-family: Trebuchet MS, Arial;
+	overflow-x: hidden;
+
+}
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.nav
+{
+	width: 100%;
+	background-size:cover;
+	display: table;
+	margin: auto;
+	/*box-shadow: 0 4px 8px 0 rgba(3, 3, 3,0.1), 0 6px 20px 0 rgba(3, 3, 3,0.1);*/
+	top: 0;
+	background-image: url("bannerImg3.jpg");
+	/*position: fixed;*/
+	z-index:10000;
+
+}
+
+.nav>.innernav{
+	width: 100%;
+	vertical-align: middle;
+	max-width: none;
+}
+
+.navtext{
+	font-family: Trebuchet MS, Arial;
+	text-transform: uppercase;
+	margin: 0 auto;
+	text-align: left;
+	font-size: 10;
+	line-height: 1;
+	padding-top: 0.1%;
+	padding-left: 3%;
+	width: 75%;
+
+}
+.innernav> .navtext> li{
+  display:inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+	font-size: 18;
+	margin-right: 3%;
+	line-height: 2.5;
+	color: white;
+	padding-bottom: 0px;
+}
+.navtext > li>a{
+	color:white;
+	text-decoration: none;
+}
+.navtext > li> a:hover{
+	padding-bottom: 12px;
+	border-bottom: solid 3px white;
+}
+.banner{
+	height: 100%;
+	width: 100%;
+	background-color:rgb(52,52,52);
+	background-size: cover;
+	background-position: center;
+	display: table;
+	top: 0;
+	box-shadow: 0 4px 8px 0 rgba(3, 3, 3,0.2), 0 6px 20px 0 rgba(3, 3, 3,0.2);
+	color: rgb(52,52,52);
+}
+
+.page{
+	width: 75%;
+	padding-bottom: 40px;
+	background-color: white;
+	color: rgb(110,110,110);
+	margin: 0 auto;
+	margin-top: 20px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 4px 0 rgba(3, 3, 3,0.1), 0 2px 15px 0 rgba(3, 3, 3,0.1);
+}
+
+.page > .pagecontent{
+	margin-left: 10%;
+	padding-top: 30px;
+	margin-right: 10%;
+}
+#accountnav > .pagecontent
+{
+	padding-top:10px;
+	min-height: 0;
+}
+.page >.pagecontent> li
+{
+
+	padding-top: 18px;
+}
+.banner2{
+	height: 10%;
+	width: 100%;
+	background-color:rgb(52,52,53);
+	background-image: url("bannerImg3.jpg");
+	background-size: cover;
+	background-position: center;
+	display: table;
+	top: 0;
+	box-shadow: 20px 20px 20px 16px #111111;
+}
+.banner>.bannerinner{
+	vertical-align: middle;
+	width: 100%;
+	max-width: none;
+}
+.bannercontent{
+	max-width: 100%;
+	margin: 0 auto;
+	text-align:center;
+	font-size: 40;
+	color: rgb(52,52,52);
+	margin-top: 65px;
+	line-height: 0.5;
+}
+.bannercontent > h2
+{
+		/*text-shadow: 2px 2px 8px rgba(3, 3, 3,0.5);*/
+		line-height: 0.2;
+		font-family: Trebuchet MS;
+		font-weight: 900;
+		font-size: 60;
+		color: rgb(52,52,52);
+}
+.bannercontent > article
+{
+		padding-top: 8%;
+		text-shadow: 2px 2px 8px rgba(3, 3, 3,0.5);
+		line-height: 1;
+		font-family: Trebuchet MS;
+		font-weight: 100;
+		max-width: 60%;
+		margin: 0 auto;
+		font-size: 20;
+		color: white;
+}
+.searchpanel
+{
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 0px;
+}
+.searchpanel > .paneldivision
+{
+	/*background-color: rgb(225,225,225);*/
+	max-width: 450px;
+	padding: 10px;
+	padding-left:12px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+}
+input{
+	margin: 0 auto;
+	width:450px;
+	font-size: 16px;
+	padding:9px;
+	border: 1.5px solid #ccc;
+  border-radius: 10px;
+	color:rgb(52,52,53);
+	margin-left: 12px;
+}
+
+button
+{
+	width:500px;
+	border-top: 2px solid rgb(224,224,224);
+	border-right: none;
+	border-bottom: none;
+	border-left: none;
+	background-color: rgb(253,255,253);
+	color:rgb(117,117,117);
+	font-size: 19px;
+	margin: 0 auto;
+	padding: 10px;
+	margin-top: 10px;
+}
+button:hover
+{
+	color: rgb(117,199,185);
+	cursor:pointer;
+}
