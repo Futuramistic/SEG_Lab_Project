@@ -157,7 +157,10 @@ abstract class DatabaseObject{
     $sql .= " WHERE ".static::$idName."='" .self::$database->escape_string($this->{static::$idName})."'";
     $sql .= " LIMIT 1";
     $sql .= ";";
+    echo($sql);
     $result = self::$database->query($sql);
+    echo("\n");
+    echo($result);
     return $result;
   }
 }

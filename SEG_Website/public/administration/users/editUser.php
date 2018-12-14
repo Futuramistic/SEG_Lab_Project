@@ -25,6 +25,10 @@ check_staff();
               User::dump_admin();
           }
           $args['banned']=$_POST['banned']??0;
+          if($args['banned']==1)
+          {
+            $args['banDate']=date_create(date("Y-m-d H:i:s"))->format("Y-m-d H:i:s");
+          }
           $args['password1']=$_POST['password1'];
           $args['password2']=$_POST['password2'];
           if(isset($args['password1'])&&isset($args['password2']))

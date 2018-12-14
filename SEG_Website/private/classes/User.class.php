@@ -195,7 +195,50 @@ class User extends DatabaseObject{
     } else {
       $this->password_required = false;
     }
-    return parent::update();
+    $result = parent::update();
+    if($this->banned == 0 && $result)
+    {
+      $this->setBanDate();
+    }
+    if($this->banned == 1 && $result)
+    {
+      $this->setBanDateTrue();
+    }
+    return $result;
+  }
+
+  /**
+  **Set ban date to current date
+  **/
+  public function setBanDateTrue()
+  {
+    $sql = "UPDATE User";
+    $sql .= " SET";
+    $sql .= " banDate=CURRENT_TIMESTAMP";
+    $sql .= " WHERE userID='".self::$database->escape_string($this->userID)."'";
+    $sql .= " LIMIT 1";
+    $sql .=";";
+    echo($sql);
+    $result = self::$database->query($sql);
+    echo($result);
+    return $result;
+  }
+
+  /**
+  **Set ban date to NULL
+  **/
+  public function setBanDate()
+  {
+    $sql = "UPDATE User";
+    $sql .= " SET";
+    $sql .= " banDate=NULL";
+    $sql .= " WHERE userID='".self::$database->escape_string($this->userID)."'";
+    $sql .= " LIMIT 1";
+    $sql .=";";
+    echo($sql);
+    $result = self::$database->query($sql);
+    echo($result);
+    return $result;
   }
 
   /**
@@ -273,7 +316,7 @@ class User extends DatabaseObject{
     echo('</table>');
     echo('</form>');
   }
-  
+
   public $userID;
   public $firstName;
   public $secondName;
@@ -285,7 +328,7 @@ class User extends DatabaseObject{
   public $admin;
   public $administration;
   public $banned;
-  public $banDate;
+  public $banDate=NULL;
   public $overdue;
   public $password1;
   public $password2;
