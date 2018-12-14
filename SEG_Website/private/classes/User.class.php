@@ -3,6 +3,105 @@ class User extends DatabaseObject{
   static protected $db_columns = ['userID','firstName','secondName','password','fees','email','user_name','admin','administration','banned'];
   static protected $table_name = "User";
   static protected $idName = "userID";
+  /**
+  **Find user by id
+  **/
+  static public function find_by_id($id)
+  {
+    $sql = "SELECT * FROM User ";
+    $sql .= "WHERE userID = '" . self::$database->escape_string($id) . "'";
+    $sql .= " LIMIT 1;";
+    return self::find_single_by($sql);
+  }
+
+  /**
+  **Find all banned users
+  **/
+  static public function find_all_banned()
+  {
+    $sql  = "SELECT * FROM User ";
+    $sql .= "WHERE banned=1 ";
+    $sql .= "ORDER BY userID";
+    $sql.=";";
+    return self::find_by_sql($sql);
+  }
+
+  /**
+  **Find last user id in the database
+  **/
+  static public function find_last_user()
+  {
+    $sql = "SELECT * ";
+    $sql .= "FROM User ";
+    $sql .= "WHERE UserID = (SELECT MAX(UserID) FROM User)";
+    return self::find_single_by($sql);
+  }
+
+  /**
+  **Find user with provided username
+  **/
+  static public function find_by_username($user_name)
+  {
+    $sql = "SELECT * FROM User ";
+    $sql .= "WHERE user_name = '" . self::$database->escape_string($user_name) . "'";
+    $sql .= " LIMIT 1";
+    return self::find_single_by($sql);
+  }
+
+  /**
+  **Find all users records
+  **/
+  static public function find_all()
+  {
+      $sql = "SELECT * FROM User ";
+      $sql .= "ORDER BY userID";
+      $sql.=";";
+      return self::find_by_sql($sql);
+  }
+
+  /**
+  **Find users with outstanding fees
+  **/
+  static public function outstanding_fees()
+  {
+    $sql  = "SELECT * FROM User ";
+    $sql .= "WHERE fees>0 ";
+    $sql .= "ORDER BY userID";
+    $sql.=";";
+    return self::find_by_sql($sql);
+  }
+
+  /**
+  **Find users whole violated rules of society at least once
+  **/
+  public static function find_bannable_behaviour()
+  {
+    $sql = "SELECT U.user_name, count(*) as overdue From Renting as R Join User as U On R.userid=U.userID ";
+    $sql .= "WHERE (returnDate>dueDate OR (returnDate Is NULL AND CURRENT_TIMESTAMP>dueDate)) ";
+    $sql .= "And Date_Add(CURRENT_TIMESTAMP, Interval -1 Year)<rentDate ";
+    $sql .= "And U.banned=0 ";
+    $sql .= "Group By R.userid;";
+    return self::find_by_sql($sql);
+  }
+
+  /**
+  **Unset current admin
+  **/
+  public static function dump_admin()
+  {
+    $sql = "UPDATE User";
+    $sql .= " SET";
+    $sql .= " admin='0'";
+    $sql .= " WHERE admin='1'";
+    $sql .= " LIMIT 1";
+    $sql .= ";";
+    $result = self::$database->query($sql);
+    return $result;
+  }
+
+  /**
+  **Validate user
+  **/
   protected function validate()
   {
     $this->errors=[];
@@ -85,70 +184,10 @@ class User extends DatabaseObject{
       }
     return $this->errors;
   }
-  static public function find_by_id($id)
-  {
-    $sql = "SELECT * FROM User ";
-    $sql .= "WHERE userID = '" . self::$database->escape_string($id) . "'";
-    $sql .= " LIMIT 1;";
-    return self::find_single_by($sql);
-  }
-  static public function find_all_banned()
-  {
-    $sql  = "SELECT * FROM User ";
-    $sql .= "WHERE banned=1 ";
-    $sql .= "ORDER BY userID";
-    $sql.=";";
-    return self::find_by_sql($sql);
-  }
-  static public function find_last_user()
-  {
-    $sql = "SELECT * ";
-    $sql .= "FROM User ";
-    $sql .= "WHERE UserID = (SELECT MAX(UserID) FROM User)";
-    return self::find_single_by($sql);
-  }
-  static public function find_by_username($user_name)
-  {
-    $sql = "SELECT * FROM User ";
-    $sql .= "WHERE user_name = '" . self::$database->escape_string($user_name) . "'";
-    $sql .= " LIMIT 1";
-    return self::find_single_by($sql);
-  }
-  static public function find_all()
-  {
-      $sql = "SELECT * FROM User ";
-      $sql .= "ORDER BY userID";
-      $sql.=";";
-      return self::find_by_sql($sql);
-  }
-  static public function outstanding_fees()
-  {
-    $sql  = "SELECT * FROM User ";
-    $sql .= "WHERE fees>0 ";
-    $sql .= "ORDER BY userID";
-    $sql.=";";
-    return self::find_by_sql($sql);
-  }
-  public static function find_bannable_behaviour()
-  {
-    $sql = "SELECT U.user_name, count(*) as overdue From Renting as R Join User as U On R.userid=U.userID ";
-    $sql .= "WHERE (returnDate>dueDate OR (returnDate Is NULL AND CURRENT_TIMESTAMP>dueDate)) ";
-    $sql .= "And Date_Add(CURRENT_TIMESTAMP, Interval -1 Year)<rentDate ";
-    $sql .= "And U.banned=0 ";
-    $sql .= "Group By R.userid;";
-    return self::find_by_sql($sql);
-  }
-  public static function dump_admin()
-  {
-    $sql = "UPDATE User";
-    $sql .= " SET";
-    $sql .= " admin='0'";
-    $sql .= " WHERE admin='1'";
-    $sql .= " LIMIT 1";
-    $sql .= ";";
-    $result = self::$database->query($sql);
-    return $result;
-  }
+
+  /**
+  **Update user in the database
+  **/
   public function update()
   {
     if($this->bare_password != '') {
@@ -158,6 +197,10 @@ class User extends DatabaseObject{
     }
     return parent::update();
   }
+
+  /**
+  ** Unban user
+  **/
   public function unban()
   {
     $sql  = "UPDATE User ";
@@ -168,6 +211,10 @@ class User extends DatabaseObject{
     $result = self::$database->query($sql);
     return $result;
   }
+
+  /**
+  **Ban user
+  **/
   public function ban()
   {
     $sql  = "UPDATE User ";
@@ -178,15 +225,55 @@ class User extends DatabaseObject{
     $result = self::$database->query($sql);
     return $result;
   }
+
+  /**
+  **Create user record in database
+  **/
   public function create()
   {
     $this->set_hashed_password();
     return parent::create();
   }
+
+  /**
+  **Hash user password
+  **/
   public function set_hashed_password()
   {
     $this->password = password_hash(self::$database->escape_string($this->bare_password),PASSWORD_DEFAULT);
   }
+
+  /**
+  **Display user edit form
+  **/
+  public function display($file)
+  {
+    echo('<form action="'.$file.$this->userID.'" method="post">');
+    echo('<table class="center output" style="text-align: center;">');
+    echo('<tr><th>First Name</th><td><input  class ="searchForm" type="text" placeholder="First Name" name="firstName" value="'.$this->firstName.'"/></td></tr>');
+    echo('<tr><th>Last Name</th><td><input  class ="searchForm" type="text" placeholder="Second Name" name="secondName" value="'.$this->secondName.'"/></td></tr>');
+    echo('<tr><th>E-mail</th><td><input  class ="searchForm" type="text" placeholder="E-Mail" name="email" value="'.$this->email.'"/></td></tr>');
+    echo('<tr><th>User Name</th><td><input  class ="searchForm" type="text" placeholder="User Name" name="user_name" value="'.$this->user_name.'"/></td></tr>');
+    echo('<tr><th>Fees</th><td><input  class ="searchForm" type="text" placeholder="Fees" name="fees" value="'.$this->fees.'"/></td></tr>');
+    echo('<tr><th>Password</th><td><input  class ="searchForm" type="password" placeholder="Password" name="password1"/></td></tr>');
+    echo('<tr><th>Confirm Password</th><td><input  class ="searchForm" type="password" placeholder="Password" name="password2"/></td></tr>');
+    if(isset($_SESSION['admin'])&&$_SESSION['admin']=="1")
+    {echo('<input type="hidden" name="option" value="0"/>');
+    echo('<tr><th>Admin</th><td><input type="hidden" name="admin" value="0"/><input type="checkbox" name="admin" value="1"');
+    if($this->admin==1){echo ("checked");}
+    echo('/></td></tr>');
+    echo('<tr><th>Administration</th><td><input type="hidden" name="administration" value="0"/><input type="checkbox" name="administration" value="1"');
+    if($this->administration==1){echo ("checked");}
+    echo('/></td></tr>');
+    echo('<tr><th>Banned</th><td><input type="hidden" name="banned" value="0"/><input type="checkbox" name="banned" value="1"');
+    if($this->banned==1){echo ("checked");}
+    echo('/></td></tr>');
+    }
+    echo('<tr><th></th><td><button type="submit" name="userID" value="'.$this->userID.'">Submit</button></td></tr>');
+    echo('</table>');
+    echo('</form>');
+  }
+  
   public $userID;
   public $firstName;
   public $secondName;
@@ -212,8 +299,8 @@ class User extends DatabaseObject{
     $this->user_name = $args['user_name']??'';
     $this->fees = $args['fees']??'0.00';
     $this->admin = $args['admin']??'0';
-    $this->administration = $args['banned']??'0';
-    $this->banned = $args['administration']??'0';
+    $this->administration = $args['administration']??'0';
+    $this->banned = $args['banned']??'0';
     $this->banDate = $args['banDate']??NULL;
     $this->password1= $args['password1']??"";
     $this->password2= $args['password2']??"";
@@ -222,32 +309,5 @@ class User extends DatabaseObject{
 
   }
 
-  public function display($file)
-  {
-    echo('<form action="'.$file.$this->userID.'" method="post">');
-    echo('<table class="center output" style="text-align: center;">');
-    echo('<tr><th>First Name</th><td><input  class ="searchForm" type="text" placeholder="First Name" name="firstName" value="'.$this->firstName.'"/></td></tr>');
-    echo('<tr><th>Last Name</th><td><input  class ="searchForm" type="text" placeholder="Second Name" name="secondName" value="'.$this->secondName.'"/></td></tr>');
-    echo('<tr><th>E-mail</th><td><input  class ="searchForm" type="text" placeholder="E-Mail" name="email" value="'.$this->email.'"/></td></tr>');
-    echo('<tr><th>User Name</th><td><input  class ="searchForm" type="text" placeholder="User Name" name="user_name" value="'.$this->user_name.'"/></td></tr>');
-    echo('<tr><th>Fees</th><td><input  class ="searchForm" type="text" placeholder="Fees" name="fees" value="'.$this->fees.'"/></td></tr>');
-    echo('<tr><th>Password</th><td><input  class ="searchForm" type="password" placeholder="Password" name="password1"/></td></tr>');
-    echo('<tr><th>Confirm Password</th><td><input  class ="searchForm" type="password" placeholder="Password" name="password2"/></td></tr>');
-    if(isset($_SESSION['admin'])&&$_SESSION['admin']=="1")
-    {echo('<input type="hidden" name="option" value="0"/>');
-    echo('<tr><th>Admin</th><td><input type="hidden" name="admin" value="0"/><input type="checkbox" name="admin" value="1"');
-    if($this->admin==1){echo ("checked");}
-    echo('/></td></tr>');
-    echo('<tr><th>Administration</th><td><input type="hidden" name="administration" value="0"/><input type="checkbox" name="administration"');
-    if($this->administration==1){echo ("checked");}
-    echo('value="1"/></td></tr>');
-    echo('<tr><th>Banned</th><td><input type="hidden" name="banned" value="0"/><input type="checkbox" name="banned"value="1"');
-    if($this->banned==1){echo ("checked");}
-    echo('/></td></tr>');
-    }
-    echo('<tr><th></th><td><button type="submit" name="userID" value="'.$this->userID.'">Submit</button></td></tr>');
-    echo('</table>');
-    echo('</form>');
-  }
 }
 ?>

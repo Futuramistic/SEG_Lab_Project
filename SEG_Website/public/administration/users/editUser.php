@@ -24,7 +24,7 @@ check_staff();
           {
               User::dump_admin();
           }
-          $args['banned']=$_POST['banned'];
+          $args['banned']=$_POST['banned']??0;
           $args['password1']=$_POST['password1'];
           $args['password2']=$_POST['password2'];
           if(isset($args['password1'])&&isset($args['password2']))

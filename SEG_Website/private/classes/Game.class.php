@@ -4,46 +4,10 @@ class Game extends DatabaseObject
   static protected $db_columns = ['id','image','review','name','platform','format','developer','PEGI','price','year','rented'];
   static protected $table_name = "Game";
   static protected $idName = "id";
-  public function find_specific()
-  {
-      $sql = "SELECT * FROM Game ";
-      $sql .= "WHERE 1=1";
-      if(is_present($this->name))
-      {
-        $sql .= " AND name LIKE  '" . self::$database->escape_string($this->name) . "%'";
-      }
-      if(is_present($this->developer))
-      {
-        $sql .= " AND developer = '" . self::$database->escape_string($this->developer) . "'";
-      }
-      if(is_present($this->year))
-      {
-        $sql .= " AND year LIKE '%" .  self::$database->escape_string($this->year) . "%'";
-      }
-      if(is_present($this->platform))
-      {
-        $sql .= " AND platform = '" . self::$database->escape_string($this->platform). "'";
-      }
-      if(is_present($this->format))
-      {
-        $sql .= " AND format = '" . self::$database->escape_string($this->format) . "'";
-      }
-      if(is_present($this->PEGI))
-      {
-        $sql .= " AND PEGI = '" . self::$database->escape_string($this->PEGI) . "'";
-      }
-      if(is_present($this->maxprice))
-      {
-        $sql .= " AND price <= '" . self::$database->escape_string($this->maxprice) . "'";
-      }
-      if(is_present($this->minprice))
-      {
-        $sql .= " AND price >= '" . self::$database->escape_string($this->minprice) . "'";
-      }
-      $sql.=" ORDER BY name";
-      $sql.=";";
-      return self::find_by_sql($sql);
-  }
+
+  /**
+  **Find all games records in database table
+  **/
   public static function find_all()
   {
     $sql = "SELECT * FROM Game ";
@@ -51,6 +15,10 @@ class Game extends DatabaseObject
     $sql.=";";
     return self::find_by_sql($sql);
   }
+
+  /**
+  **Find a game in the database table with specified id
+  **/
   public static function find_by_id($id)
   {
     $sql = "SELECT * FROM Game ";
@@ -58,6 +26,10 @@ class Game extends DatabaseObject
     $sql .= " LIMIT 1";
     return self::find_single_by($sql);
   }
+
+  /**
+  **Find all game formats in the database table
+  **/
   public static function find_all_fortmats()
   {
     $sql = "SELECT format FROM Game ";
@@ -65,6 +37,10 @@ class Game extends DatabaseObject
     $sql.=";";
     return self::find_by_sql($sql);
   }
+
+  /**
+  **Find all game PEGIs in the database table
+  **/
   public static function find_all_PEGI()
   {
     $sql = "SELECT PEGI FROM Game ";
@@ -72,6 +48,10 @@ class Game extends DatabaseObject
     $sql.=";";
     return self::find_by_sql($sql);
   }
+
+  /**
+  **Find all game platforms in the database table
+  **/
   public static function find_all_platforms()
   {
     $sql = "SELECT platform FROM Game ";
@@ -79,6 +59,10 @@ class Game extends DatabaseObject
     $sql.=";";
     return self::find_by_sql($sql);
   }
+
+  /**
+  **Validate game record
+  **/
   public function validate()
   {
     $this->errors=[];
@@ -176,6 +160,50 @@ class Game extends DatabaseObject
     }
 
     return $this->errors;
+  }
+
+  /**
+  **Find game specified by required fields
+  **/
+  public function find_specific()
+  {
+      $sql = "SELECT * FROM Game ";
+      $sql .= "WHERE 1=1";
+      if(is_present($this->name))
+      {
+        $sql .= " AND name LIKE  '" . self::$database->escape_string($this->name) . "%'";
+      }
+      if(is_present($this->developer))
+      {
+        $sql .= " AND developer = '" . self::$database->escape_string($this->developer) . "'";
+      }
+      if(is_present($this->year))
+      {
+        $sql .= " AND year LIKE '%" .  self::$database->escape_string($this->year) . "%'";
+      }
+      if(is_present($this->platform))
+      {
+        $sql .= " AND platform = '" . self::$database->escape_string($this->platform). "'";
+      }
+      if(is_present($this->format))
+      {
+        $sql .= " AND format = '" . self::$database->escape_string($this->format) . "'";
+      }
+      if(is_present($this->PEGI))
+      {
+        $sql .= " AND PEGI = '" . self::$database->escape_string($this->PEGI) . "'";
+      }
+      if(is_present($this->maxprice))
+      {
+        $sql .= " AND price <= '" . self::$database->escape_string($this->maxprice) . "'";
+      }
+      if(is_present($this->minprice))
+      {
+        $sql .= " AND price >= '" . self::$database->escape_string($this->minprice) . "'";
+      }
+      $sql.=" ORDER BY name";
+      $sql.=";";
+      return self::find_by_sql($sql);
   }
   public $id;
   public $image;

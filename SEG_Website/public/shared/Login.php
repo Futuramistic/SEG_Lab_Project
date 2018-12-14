@@ -9,7 +9,7 @@ require("../stylesheets/style.html");
 
 	if(check_login())
 	{
-		header("Location: Accounts.php");
+		header("Location: AccountsStuff/AccountInfo.php");
 		exit();
 	}
 
