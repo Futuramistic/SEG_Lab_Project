@@ -1,0 +1,49 @@
+5CCS2SEG -LAB PROJECT REPORT
+
+Team Byzantine
+
+Team Members:
+•	Mohamed Alim
+•	Mateusz Nowak
+•	Vitesh Soni
+•	Huajun (Lee) Lin
+•	Fahad Mustafa
+
+
+
+
+
+
+
+
+
+PROJECT DESCRIPTION
+The Computer Gaming Society rents games to members of the society for a limited period. Members will have to adhere to the society’s rules or they will face consequences like getting banned from renting games. Members can visit the society's website if they wish to rent a game. Members can know what games will be available at any one time because the collection is currently available online. They also can find out whether a game they know the society has in its library is currently being rented out. The society's secretary is the admin and they can give other users administrative privileges. These privileges are normally given to society volunteers. This web application was created to meet the needs of The Computer Gaming Society and was developed and deployed using a LAMP technology stack.
+
+ 
+This is the search page. You can search games by:
+•	Name.
+•	Platform (e.g., ps3,ps4).
+•	Developer.
+•	Format (cd, tape).
+•	Year.
+•	Age Rating (PEGI).
+•	Min and Max price.
+When the results are produced, the image of the game gets displayed. This can be done as the URL of the image will be saved in the database. There is also a review link for the game which takes you to the IGN review page of the game. Depending on whether the game is rented or not, this will show accordingly in the rented column.
+
+
+
+ 
+When a user is logged in, the Nav bar will display “LOGGED AS:” followed by the user name. If an admin is logged in, they have the option to manage games, users and renting’s. They also have the option to see the reports. 
+
+ 
+
+ If a non-admin is logged in, the “Manage Data” and “See Reports” options on the left will not be available and the user can only see their personal information and the games they are currently renting.
+
+
+
+ER DIAGRAM
+ ¬¬¬ 
+OVERVIEW OF THE FILES AND DIRECTORIES
+ 
+We have created the directories such that every folder contains the relevant files related to it. First, we separated everything into private or public. Files and directories in the private folder are to do with the back-end and the ones to do with the front-end are placed in public. Within public we have an administration folder that has pages related to managing the users, game rentings and the games. We have a shared folder that has the pages available to everyone. Everything related to styling from banner images to CSS will be found in the stylesheets folder.

@@ -1,5 +1,7 @@
 Team Name:   Byzantine
 
+ URL:   http://seggamesoc.dx.am/SEG_Website/public/shared/Home.php
+ 
  Team Members:
 •	Mohamed Alim
 •	Mateusz Nowak
