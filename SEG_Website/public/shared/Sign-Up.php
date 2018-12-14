@@ -15,19 +15,21 @@ if(is_post_request())
 		$args['user_name']=$_POST['username']??NULL;
 		$user = new User($args);
 		$user->merge_attributes($args);
-		$result = $user->create();
-		if($result===true&&$_POST['rules']==1)
+		if($_POST['rules']==1)
 		{
-			set_login_variables();
-			header("Location:Accounts.php");
-			exit();
-		}
-		else
-		{
-			if($result!==true)
+			$result = $user->create();
+			if($result===true)
+			{
+				set_login_variables();
+				header("Location:AccountsStuff/AccountInfo.php");
+				exit();
+			}
 			{
 				$errors = $result;
 			}
+		}
+		else
+		{
 			$errors[]="You have to accept rules of our society to join!";
 		}
 }
@@ -66,7 +68,7 @@ if(is_post_request())
 	<div class = "checkbox">
 	<article style ="padding-left: 85px;"> I agree to oblige to the <u><a href="Rules.php" style = "color: rgb(117,117,117);">rules</a></u> of the society</article>
 		<input type="hidden" name="rules" value="0">
-		<input type="checkbox"  id="myCheck" onclick="1" name="rules" value="1">
+		<input type="checkbox" id="myCheck" name="rules" value="1">
 	</div>
 </div>
 			<button type="submit" id="button">Sign Up</button>

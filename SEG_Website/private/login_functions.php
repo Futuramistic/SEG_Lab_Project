@@ -1,4 +1,8 @@
 <?php
+
+/**
+**Check if user is logged in;
+**/
 function check_login(){
   if(isset($_SESSION['id']))
   {
@@ -7,6 +11,9 @@ function check_login(){
   return false;
 }
 
+/**
+**Check if user is banned
+**/
 function check_banned(){
   if(isset($_SESSION['banned'])&&$_SESSION['banned']==1)
   {
@@ -17,6 +24,10 @@ function check_banned(){
   }
 }
 
+/**
+**Check if user is member of staff;
+**Redirects other users to Login page
+**/
 function check_staff(){
   if((!isset($_SESSION['admin'])||$_SESSION['admin']==0)&&(!isset($_SESSION['administration'])||$_SESSION['administration']==0))
   {
@@ -27,6 +38,9 @@ function check_staff(){
   }
 }
 
+/**
+**Unset all session variables
+**/
 function logout()
 {
   unset($_SESSION['admin']);
@@ -36,6 +50,9 @@ function logout()
   unset($_SESSION['banned']);
 }
 
+/**
+**Check if user can log in
+**/
 function verify_login()
 {
   $errors=[];
@@ -53,7 +70,7 @@ function verify_login()
   if($_POST['username']!="")
   {
     $user = User::find_by_username($_POST['username']);
-    if(!password_verify($_POST['password'],$user->password))
+    if(!$user||!password_verify($_POST['password'],$user->password))
     {
       $errors[]="Username or password had an error";
     }
@@ -61,6 +78,9 @@ function verify_login()
   return $errors;
 }
 
+/**
+**Log user to the website
+**/
 function login()
 {
   $errors=verify_login();
@@ -71,6 +91,9 @@ function login()
   return set_login_variables();
 }
 
+/**
+**Set login variables
+**/
 function set_login_variables()
 {
   $user = User::find_by_username($_POST['username']);
@@ -83,6 +106,9 @@ function set_login_variables()
   return true;
 }
 
+/**
+**Get error code and produce error message
+**/
 function resolve_errors()
 {
   if(isset($_SESSION['error'])&&$_SESSION['error']!="")
@@ -101,6 +127,9 @@ function resolve_errors()
   return false;
 }
 
+/**
+**Display login error
+**/
 function display_login_errors($errors)
 {
     $output = '';

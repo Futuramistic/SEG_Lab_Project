@@ -32,6 +32,7 @@ function is_get_request()
 {
   return $_SERVER['REQUEST_METHOD']=='GET';
 }
+
 function display_errors($errors=array()) {
   $output = '';
   if(!empty($errors)) {

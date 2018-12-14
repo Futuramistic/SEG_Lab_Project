@@ -31,7 +31,7 @@ check_staff();
       if($user->admin==1){echo("<td>True</td>");}else{echo("<td>False</td>");}
       if($user->administration==1){echo("<td>True</td>");}else{echo("<td>False</td>");}
       if($user->banned==1){echo("<td>True</td>");}else{echo("<td>False</td>");}
-      if($user->banned==1){echo("<td>Banned from: $user->banDate</td>");}
+      if($user->banned==1){echo("<td>Banned from: $user->banDate</td>");}else{echo("<td></td>");}
       ?>
       <td><a class="action" href= "<?php echo('editUser.php?userID='. $user->userID ); ?>">Edit</a></td>
       <td><a class="action" href= "<?php echo('deleteUser.php?userID='. $user->userID ); ?>">Delete</a></td>
