@@ -6,7 +6,7 @@ Team Name:   Byzantine
  
  User: admin 
  
- Password admin
+ Password: admin
  
  Team Members:
 •	Mohamed Alim
