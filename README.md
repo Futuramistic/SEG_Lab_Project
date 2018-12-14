@@ -3,7 +3,9 @@ Team Name:   Byzantine
  URL:   http://seggamesoc.dx.am/SEG_Website/public/shared/Home.php
  
  Admin credentials:
- User: admin
+ 
+ User: admin 
+ 
  Password admin
  
  Team Members:
